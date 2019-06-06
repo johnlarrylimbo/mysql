@@ -1,0 +1,1 @@
+CALL stored_procedure_name(param_1, param_2, param_n);

@@ -1,0 +1,26 @@
+***********************************************
+
+Steps on how to install:
+
+1) Create .txt file in the mysql/bin directory.
+2) Rename the file into MySQLAutoBak.bat.
+3) Create user account in mysql for back up usage only.
+4) Open the file into a text editor.
+5) Copy and paste the code in div1.
+6) Run system scheduler application and create new task.
+
+***********************************************
+
+
+******************************************************************************
+Div1
+-----
+@echo off
+For /f "tokens=2-4 delims=/ " %%a in ('date /t') do (set mydate=%%b-%%a-%%c)
+For /f "tokens=1-2 delims=/: " %%a in ('time /t') do (set mytime=%%a-%%b)
+mysqldump	-uusername	-paspassword	databasename	>	"directory location for backup\databasename_%mydate%_%mytime%.sql"
+
+
+
+
+******************************************************************************
